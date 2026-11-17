@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hey-Q Service Pvt Ltd provides customer support, telecalling and business process support services.">
+  <title>Hey-Q Service Pvt Ltd | BPO & Business Support</title>
+  <style>
+    :root {
+      --ink: #111111;
+      --ink-soft: #1c1c1c;
+      --orange: #ff7a1a;
+      --orange-light: #ff9a4d;
+      --paper: #ffffff;
+      --muted: #b8b8b8;
+      --line: rgba(255,255,255,.12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--paper); background: var(--ink); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: auto; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(17,17,17,.96); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: -.5px; font-size: 19px; }
+    .brand-mark { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: var(--orange); color: var(--ink); font-weight: 900; font-size: 22px; }
+    .brand small { display: block; color: var(--muted); font-size: 10px; letter-spacing: 2px; margin-top: -3px; }
+    nav { display: flex; align-items: center; gap: 25px; font-size: 14px; color: #e8e8e8; }
+    nav a:hover { color: var(--orange-light); }
+    .btn { display: inline-block; border: 0; border-radius: 8px; padding: 13px 20px; font-weight: 700; background: var(--orange); color: #111; cursor: pointer; transition: transform .2s, background .2s; }
+    .btn:hover { transform: translateY(-2px); background: var(--orange-light); }
+    .btn-outline { background: transparent; border: 1px solid var(--orange); color: var(--orange); }
+    .hero { padding: 100px 0 94px; background: radial-gradient(circle at 82% 28%, rgba(255,122,26,.18), transparent 29%), linear-gradient(135deg,#111 0%,#191919 100%); }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: 60px; }
+    .eyebrow { color: var(--orange); text-transform: uppercase; letter-spacing: 3px; font-size: 12px; font-weight: 800; }
+    h1 { font-size: clamp(42px, 6vw, 70px); line-height: 1.04; letter-spacing: -2.5px; margin: 18px 0; }
+    h1 span { color: var(--orange); }
+    .hero p { color: #c8c8c8; max-width: 590px; font-size: 18px; margin-bottom: 30px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-card { background: linear-gradient(145deg,#252525,#171717); border: 1px solid rgba(255,122,26,.35); border-radius: 22px; padding: 34px; box-shadow: 0 25px 70px rgba(0,0,0,.35); }
+    .hero-card .big { font-size: 58px; font-weight: 900; color: var(--orange); line-height: 1; }
+    .hero-card h3 { font-size: 23px; margin: 16px 0 8px; }
+    .hero-card p { font-size: 15px; margin: 0; }
+    .mini-line { height: 4px; width: 58px; border-radius: 4px; background: var(--orange); margin: 22px 0; }
+    section { padding: 82px 0; }
+    .section-head { max-width: 680px; margin-bottom: 38px; }
+    .section-head h2 { font-size: clamp(30px,4vw,43px); line-height: 1.15; margin: 10px 0; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .services { background: #f6f6f6; color: var(--ink); }
+    .services .section-head p { color: #626262; }
+    .cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .service-card { background: white; padding: 27px; border-radius: 14px; border: 1px solid #e8e8e8; min-height: 215px; }
+    .service-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 12px; background: #fff0e5; color: #e96508; font-size: 23px; }
+    .service-card h3 { margin: 18px 0 8px; font-size: 19px; }
+    .service-card p { margin: 0; color: #666; font-size: 14px; }
+    .about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 55px; align-items: center; }
+    .about-panel { border-radius: 18px; padding: 36px; background: linear-gradient(145deg,#292929,#191919); border: 1px solid var(--line); }
+    .about-panel strong { color: var(--orange); font-size: 35px; display: block; }
+    .about-panel span { color: var(--muted); font-size: 14px; }
+    .about-copy h2 { font-size: clamp(30px,4vw,42px); line-height: 1.15; margin: 10px 0 18px; }
+    .about-copy p { color: #bdbdbd; }
+    .checks { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+    .checks div { color: #eee; font-size: 14px; }
+    .checks b { color: var(--orange); margin-right: 8px; }
+    .contact { background: #f6f6f6; color: var(--ink); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .contact .section-head p { color: #666; }
+    .contact-card { background: white; border: 1px solid #e7e7e7; border-radius: 14px; padding: 28px; }
+    .contact-item { padding: 13px 0; border-bottom: 1px solid #eee; }
+    .contact-item:last-child { border-bottom: 0; }
+    .contact-item small { display: block; color: #777; margin-bottom: 4px; }
+    .contact-item a { color: #d85d08; font-weight: 700; overflow-wrap: anywhere; }
+    .cta { background: var(--orange); color: #111; padding: 48px 0; }
+    .cta-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    .cta h2 { margin: 0 0 5px; font-size: 30px; }
+    .cta p { margin: 0; }
+    .cta .btn { background: #111; color: white; }
+    footer { padding: 25px 0; color: #999; font-size: 13px; }
+    footer .container { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    @media (max-width: 800px) {
+      .hero-grid,.about-grid,.contact-grid { grid-template-columns: 1fr; gap: 30px; }
+      .cards { grid-template-columns: 1fr 1fr; }
+      nav { gap: 13px; font-size: 12px; }
+      nav .nav-cta { display: none; }
+      .hero { padding: 72px 0; }
+      section { padding: 64px 0; }
+    }
+    @media (max-width: 540px) {
+      .container { width: min(100% - 30px,1120px); }
+      .nav { min-height: 68px; }
+      nav { gap: 10px; }
+      nav a { font-size: 11px; }
+      .brand { font-size: 16px; gap: 8px; }
+      .brand-mark { width: 36px; height: 36px; }
+      .cards { grid-template-columns: 1fr; }
+      .checks { grid-template-columns: 1fr; }
+      .cta-inner { align-items: flex-start; flex-direction: column; }
+      h1 { letter-spacing: -1.5px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Hey-Q Service home">
+        <span class="brand-mark">Q</span>
+        <span>HEY-Q SERVICE<small>PRIVATE LIMITED</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a class="btn nav-cta" href="#contact">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">BPO • Customer Support • Business Services</div>
+          <h1>Better support.<br><span>Stronger business.</span></h1>
+          <p>Hey-Q Service Pvt Ltd helps businesses build better customer connections through dependable support, telecalling and business process services.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#contact">Talk to our team</a>
+            <a class="btn btn-outline" href="#services">Explore services</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="big">HEY-Q</div>
+          <div class="mini-line"></div>
+          <h3>Your business support partner</h3>
+          <p>Professional communication and process support designed around your business needs.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">What we do</div>
+          <h2>Services that keep your business moving</h2>
+          <p>Flexible support services to help your team connect with customers and manage everyday business processes.</p>
+        </div>
+        <div class="cards">
+          <article class="service-card">
+            <div class="service-icon">☎</div>
+            <h3>Telecalling Services</h3>
+            <p>Customer calling, lead follow-ups and structured communication support for your business.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">◎</div>
+            <h3>Customer Support</h3>
+            <p>Helpful customer interactions that support a smooth and professional customer experience.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">▣</div>
+            <h3>E-commerce Support</h3>
+            <p>Order-related enquiries, customer coordination and day-to-day e-commerce process assistance.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">↗</div>
+            <h3>Lead Generation</h3>
+            <p>Lead outreach and follow-up support to help businesses connect with potential customers.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">⌘</div>
+            <h3>Back-office Support</h3>
+            <p>Process coordination and administrative assistance for routine business operations.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">◇</div>
+            <h3>Business Process Support</h3>
+            <p>Practical process support shaped to your requirements, team and customer journey.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-panel">
+          <strong>People first.</strong>
+          <span>Clear communication • Reliable support • Business focus</span>
+          <div class="mini-line"></div>
+          <p>We aim to make every business interaction more helpful, organised and effective.</p>
+        </div>
+        <div class="about-copy">
+          <div class="eyebrow">About Hey-Q</div>
+          <h2>We make customer connections count.</h2>
+          <p>Hey-Q Service Pvt Ltd is a business process and support services company focused on helping organisations manage customer communication and operational tasks.</p>
+          <p>Our approach is simple: understand the requirement, communicate clearly and provide consistent support.</p>
+          <div class="checks">
+            <div><b>✓</b> Customer-focused approach</div>
+            <div><b>✓</b> Clear communication</div>
+            <div><b>✓</b> Flexible support</div>
+            <div><b>✓</b> Process-oriented work</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="section-head">
+          <div class="eyebrow">Contact us</div>
+          <h2>Let's discuss how we can support your business.</h2>
+          <p>Tell us what your business needs. Our team would be happy to hear from you.</p>
+          <p><a class="btn" href="https://wa.me/918482827755" target="_blank" rel="noopener">Message us on WhatsApp</a></p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-item"><small>Company</small><strong>Hey-Q Service Pvt Ltd</strong></div>
+          <div class="contact-item"><small>Phone</small><a href="tel:+918482827755">+91 8482827755</a></div>
+          <div class="contact-item"><small>Email</small><a href="mailto:heyqserivespvtltd@gmail.com">heyqserivespvtltd@gmail.com</a></div>
+          <div class="contact-item"><small>Business enquiries</small><a href="mailto:heyqserivespvtltd@gmail.com?subject=Business%20Enquiry">Send an enquiry</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-inner">
+        <div><h2>Ready to connect?</h2><p>Let's build better customer experiences together.</p></div>
+        <a class="btn" href="mailto:heyqserivespvtltd@gmail.com">Contact Hey-Q</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© <span id="year"></span> Hey-Q Service Pvt Ltd. All rights reserved.</span>
+      <span>BPO & Business Support Services</span>
+    </div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
